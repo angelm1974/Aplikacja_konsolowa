@@ -21,7 +21,11 @@ namespace Konsolka_1
             // zmienne_lancuchowe();
             //  typ_wskaznikowy();
             //rzutowanie();
-            definiowanie();
+            //definiowanie();
+            // wez_dane();
+            //inkrementacja_dekrementacja();
+            //inkrementacja_dekrementacja();
+            sterowanie_przeplywem();
             Console.ReadKey();
         }
 
@@ -49,18 +53,18 @@ namespace Konsolka_1
             string sciezka1 = @"C:\Users\mariu\Source\Repos\aplikacja_konsolowa2\";
             sciezka1 += "folder5";
             Directory.CreateDirectory(sciezka1);
-        }    
-  //unsafe
-  //      static void typ_wskaznikowy()
-  //      {
-            
-  //          int x = 200;
-  //          int* ptr;
-  //          ptr = &x;
+        }
+        //unsafe
+        //      static void typ_wskaznikowy()
+        //      {
 
-  //          Console.WriteLine((int)ptr);
-  //          Console.WriteLine(*ptr);
-  //      }
+        //          int x = 200;
+        //          int* ptr;
+        //          ptr = &x;
+
+        //          Console.WriteLine((int)ptr);
+        //          Console.WriteLine(*ptr);
+        //      }
 
         static void rzutowanie()
         {
@@ -68,7 +72,7 @@ namespace Konsolka_1
             int w2 = 14;
             double liczba = 3214112.324;
             w1 = w2;
-            
+
             Console.WriteLine(12 + 32.5);
             w1 = (int)liczba;
             Console.WriteLine(Convert.ToSingle(w1));
@@ -78,10 +82,10 @@ namespace Konsolka_1
         {
             //int i, j, k;
             int i = 1, j = 2, k = 3;
-            char c='c', ch='h';
-            float f=23.423f, salary=234.4f;
+            char c = 'c', ch = 'h';
+            float f = 23.423f, salary = 234.4f;
 
-            Console.WriteLine("i={0}, j={1}, k={2}",i,j,k);
+            Console.WriteLine("i={0}, j={1}, k={2}", i, j, k);
 
 
         }
@@ -90,8 +94,47 @@ namespace Konsolka_1
         {
             int liczba;
             liczba = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("moja liczba to: {0}", liczba);
+            Console.WriteLine("moja liczba to:\n{0}\a", liczba);
+
+        }
+        /// literały znakowe
+        /// Sekwencja ucieczki	Znaczenie
+        //  \\	znak \
+        //  \'	znak '
+        //  \"	znak "
+        //  \?	znak?
+        //  \a z głośników usłyszmy pojedyczny brzęczyk(beep)
+        //  \b znak backspace(cofamy kursor o jedną pozycję)
+        //  \n nowa linia
+        //  \r powrót kursora na początek obecnej linii
+        //  \t znak tabulacji(odstęp)
+        //  \v pionowy znak tabulacji
+        //  \ooo liczba ósemkowa o jednej lub większej liczbie cyfr
+        //   \xhh liczba szestastkowa o jednej lub większej liczbie cyfr
+
+        static void inkrementacja_dekrementacja()
+        {
+            int a = 10, b = 12;
+            a++;
+            b--;
+            Console.WriteLine("a={0}, b={1}", a, b);
         }
 
+        static void sterowanie_przeplywem()
+        {
+            int i;
+            i = Convert.ToInt32(Console.ReadLine());
+
+            if (i >= 20)
+            {
+                Console.WriteLine("Jest większe albo równe");
+            }
+            else
+            {
+                Console.WriteLine("niestety jest mniejsze");
+            }
+        }
     }
+
+
 }
