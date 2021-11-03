@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 
 namespace Konsolka_1
@@ -16,7 +17,8 @@ namespace Konsolka_1
 
             Console.WriteLine("Hello World!");
             //zmienne_przyklad1();
-            typ_referencyjny();
+            //typ_referencyjny();
+            zmienne_lancuchowe();
             Console.ReadKey();
         }
 
@@ -39,5 +41,11 @@ namespace Konsolka_1
             Console.WriteLine("moja liczba to: " + liczba.ToString());
         }
 
+        static void zmienne_lancuchowe()
+        {
+            string sciezka1 = @"C:\Users\mariu\Source\Repos\aplikacja_konsolowa2\";
+            sciezka1 += "folder1";
+            Directory.CreateDirectory(sciezka1);
+        }    
     }
 }
