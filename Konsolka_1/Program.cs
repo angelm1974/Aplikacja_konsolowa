@@ -19,7 +19,8 @@ namespace Konsolka_1
             //zmienne_przyklad1();
             //typ_referencyjny();
             // zmienne_lancuchowe();
-            typ_wskaznikowy();
+            //  typ_wskaznikowy();
+            rzutowanie();
             Console.ReadKey();
         }
 
@@ -48,16 +49,28 @@ namespace Konsolka_1
             sciezka1 += "folder5";
             Directory.CreateDirectory(sciezka1);
         }    
-  unsafe
-        static void typ_wskaznikowy()
-        {
+  //unsafe
+  //      static void typ_wskaznikowy()
+  //      {
             
-            int x = 200;
-            int* ptr;
-            ptr = &x;
+  //          int x = 200;
+  //          int* ptr;
+  //          ptr = &x;
 
-            Console.WriteLine((int)ptr);
-            Console.WriteLine(*ptr);
+  //          Console.WriteLine((int)ptr);
+  //          Console.WriteLine(*ptr);
+  //      }
+
+        static void rzutowanie()
+        {
+            int w1 = 0;
+            int w2 = 14;
+            double liczba = 3214112.324;
+            w1 = w2;
+            
+            Console.WriteLine(12 + 32.5);
+            w1 = (int)liczba;
+            Console.WriteLine(Convert.ToSingle(w1));
         }
     }
 }
