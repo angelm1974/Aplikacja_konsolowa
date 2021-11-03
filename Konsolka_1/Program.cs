@@ -12,6 +12,7 @@ namespace Konsolka_1
         static void Main(string[] args)
         {
             //Kod wyświetlający napis hello world
+            //oraz trzymający konsolę otwartą
             Console.WriteLine("Hello World!");
             Console.ReadKey();
         }
