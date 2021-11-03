@@ -18,7 +18,8 @@ namespace Konsolka_1
             Console.WriteLine("Hello World!");
             //zmienne_przyklad1();
             //typ_referencyjny();
-            zmienne_lancuchowe();
+            // zmienne_lancuchowe();
+            typ_wskaznikowy();
             Console.ReadKey();
         }
 
@@ -44,8 +45,19 @@ namespace Konsolka_1
         static void zmienne_lancuchowe()
         {
             string sciezka1 = @"C:\Users\mariu\Source\Repos\aplikacja_konsolowa2\";
-            sciezka1 += "folder1";
+            sciezka1 += "folder5";
             Directory.CreateDirectory(sciezka1);
         }    
+  unsafe
+        static void typ_wskaznikowy()
+        {
+            
+            int x = 200;
+            int* ptr;
+            ptr = &x;
+
+            Console.WriteLine((int)ptr);
+            Console.WriteLine(*ptr);
+        }
     }
 }
