@@ -20,7 +20,8 @@ namespace Konsolka_1
             //typ_referencyjny();
             // zmienne_lancuchowe();
             //  typ_wskaznikowy();
-            rzutowanie();
+            //rzutowanie();
+            definiowanie();
             Console.ReadKey();
         }
 
@@ -72,5 +73,25 @@ namespace Konsolka_1
             w1 = (int)liczba;
             Console.WriteLine(Convert.ToSingle(w1));
         }
+
+        static void definiowanie()
+        {
+            //int i, j, k;
+            int i = 1, j = 2, k = 3;
+            char c='c', ch='h';
+            float f=23.423f, salary=234.4f;
+
+            Console.WriteLine("i={0}, j={1}, k={2}",i,j,k);
+
+
+        }
+
+        static void wez_dane()
+        {
+            int liczba;
+            liczba = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("moja liczba to: {0}", liczba);
+        }
+
     }
 }
