@@ -15,7 +15,7 @@ namespace Konsolka_1
             //Kod wyświetlający napis hello world
             //oraz trzymający konsolę otwartą
 
-            Console.WriteLine("Hello World!");
+            //Console.WriteLine("Hello World!");
             //zmienne_przyklad1();
             //typ_referencyjny();
             // zmienne_lancuchowe();
@@ -25,7 +25,8 @@ namespace Konsolka_1
             // wez_dane();
             //inkrementacja_dekrementacja();
             //inkrementacja_dekrementacja();
-            sterowanie_przeplywem();
+            //sterowanie_przeplywem();
+            Program1.gotowanie_jajka();
             Console.ReadKey();
         }
 
@@ -123,17 +124,28 @@ namespace Konsolka_1
         static void sterowanie_przeplywem()
         {
             int i;
+            int k=4;
             i = Convert.ToInt32(Console.ReadLine());
 
             if (i >= 20)
             {
-                Console.WriteLine("Jest większe albo równe");
+                if (k < 5)
+                {
+                    Console.WriteLine("Jest większe albo równe");
+                }
+                
             }
+            else if (i<10)
+            {
+                Console.WriteLine("Mniejsze od 10");
+            }
+
             else
             {
                 Console.WriteLine("niestety jest mniejsze");
             }
         }
+
     }
 
 
