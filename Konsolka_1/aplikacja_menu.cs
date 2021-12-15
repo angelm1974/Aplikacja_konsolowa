@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,14 +10,15 @@ namespace Konsolka_1
     class aplikacja_menu
     {
         static List<firma> ListaFirm = new List<firma>();
+        static string sciezka = @"D:\Firmy";
         public static void Menu()
         {
             Console.Clear();
-            string ramka="";
+            string ramka = "";
             for (int i = 0; i < 80; i++)
             {
                 ramka += "=";
-                
+
             }
             Console.WriteLine("\n\n\n\n\n");
             centrujText(ramka);
@@ -43,7 +45,7 @@ namespace Konsolka_1
         static void ReakcjaNaKlawisze()
         {
             ConsoleKeyInfo ckey = Console.ReadKey();
-            switch (ckey.Key)       
+            switch (ckey.Key)
             {
                 case ConsoleKey.F:
                     MenuFirma();
@@ -61,7 +63,7 @@ namespace Konsolka_1
 
         public static void MenuFirma()
         {
-            Console.Clear(); 
+            Console.Clear();
             string ramka = "";
             for (int i = 0; i < 80; i++)
             {
@@ -91,7 +93,7 @@ namespace Konsolka_1
 
             ListaFirm.Add(firmaDoDodania);
 
-            var firma=Console.ReadLine();
+            var firma = Console.ReadLine();
             Menu();
             ReakcjaNaKlawisze();
             Console.ReadLine();
@@ -114,10 +116,30 @@ namespace Konsolka_1
             centrujText("WYBIERZ FIRMĘ DO STWORZEINA KATALOGÓW!");
             centrujText(" ");
             centrujText(ramka);
+            int numer = 0;
+            foreach (var item in ListaFirm)
+            {
+                Console.WriteLine($"{numer} - {item.NazwaFirmy}");
+                numer++;
+            }
+            centrujText(ramka);
+            centrujText(" ");
+
+            centrujText("WYBIERZ NUMER");
+            numer = int.Parse(Console.ReadLine());
+            var mojafirma = ListaFirm[numer].NazwaFirmy;
+            string sciezkaFirmy = $"{sciezka}\\{mojafirma}";
+            Directory.CreateDirectory(sciezkaFirmy);
+            Directory.CreateDirectory(sciezkaFirmy + "\\KOSZTY");
+            Directory.CreateDirectory(sciezkaFirmy + "\\FAKTURY");
+            Directory.CreateDirectory(sciezkaFirmy + "\\RACHUNKI");
+            Directory.CreateDirectory(sciezkaFirmy + "\\INNE");
+            centrujText(ramka);
+            centrujText(" ");
+            centrujText("ZROIBONO");
+            Console.ReadLine();
             Menu();
             ReakcjaNaKlawisze();
-            Console.ReadLine();
-
         }
     }
 
