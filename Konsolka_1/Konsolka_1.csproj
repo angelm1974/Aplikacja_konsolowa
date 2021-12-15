@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="aplikacja_menu.cs" />
     <Compile Include="CodeFile1.cs" />
     <Compile Include="CodeFile2.cs" />
     <Compile Include="Program.cs" />

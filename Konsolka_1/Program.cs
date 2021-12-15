@@ -27,8 +27,9 @@ namespace Konsolka_1
             //inkrementacja_dekrementacja();
             //sterowanie_przeplywem();
             //Program2.moj_switch();
-            Program2.test();
-          //  Program1.gotowanie_jajka();
+            // Program2.test();
+            //  Program1.gotowanie_jajka();
+            aplikacja_menu.Menu();
             Console.ReadKey();
         }
 
