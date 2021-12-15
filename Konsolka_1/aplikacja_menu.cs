@@ -14,27 +14,42 @@ namespace Konsolka_1
         public static void Menu()
         {
             Console.Clear();
-            string ramka = "";
-            for (int i = 0; i < 80; i++)
-            {
-                ramka += "=";
-
-            }
+            string ramka = mojaRamka();
             Console.WriteLine("\n\n\n\n\n");
-            centrujText(ramka);
-            centrujText(" ");
-
+            RamkaGora(ramka);
             centrujText("MENU APLIKACJI BIUROWEJ!");
             centrujText("F - ZAŁÓŻ FIRMĘ ");
             centrujText("K - DODAJ KATALOGI ");
             centrujText("W - WYJŚCIE ");
-            centrujText(" ");
-            centrujText(ramka);
+            RamkaDol(ramka);
 
             ReakcjaNaKlawisze();
             Console.ReadLine();
-
         }
+
+        private static void RamkaDol(string ramka)
+        {
+            centrujText(" ");
+            centrujText(ramka);
+        }
+
+        private static void RamkaGora(string ramka)
+        {
+            centrujText(ramka);
+            centrujText(" ");
+        }
+
+        private static string mojaRamka()
+        {
+            string ramka = "";
+            for (int i = 0; i < 80; i++)
+            {
+                ramka += "=";
+            }
+
+            return ramka;
+        }
+
         static void centrujText(string Tekst)
         {
             Console.Write(new string(' ', (Console.WindowWidth - Tekst.Length) / 2));
@@ -64,58 +79,46 @@ namespace Konsolka_1
         public static void MenuFirma()
         {
             Console.Clear();
-            string ramka = "";
-            for (int i = 0; i < 80; i++)
-            {
-                ramka += "=";
-
-            }
+            string ramka = mojaRamka();
             Console.WriteLine("\n\n\n\n\n");
-            centrujText(ramka);
-            centrujText(" ");
-
+            RamkaGora(ramka);
             centrujText("DODAWANIE FIRMY");
-            centrujText(" ");
-            centrujText(ramka);
+            RamkaDol(ramka);
 
             firma firmaDoDodania = new firma();
-            centrujText("Podaj nazwę firmy:");
-            firmaDoDodania.NazwaFirmy = Console.ReadLine();
 
-            centrujText("Podaj adres firmy:");
-            firmaDoDodania.Adres = Console.ReadLine();
-
-            centrujText("Podaj kod pocztowy firmy:");
-            firmaDoDodania.KodPocztowy = Console.ReadLine();
-
-            centrujText("Podaj telefon firmy:");
-            firmaDoDodania.Telefon = Console.ReadLine();
-
+            firmaDoDodania.NazwaFirmy = Wyswietl_i_Pobierz("Podaj nazwę firmy:");
+            firmaDoDodania.Adres = Wyswietl_i_Pobierz("Podaj adres firmy:");
+            firmaDoDodania.KodPocztowy = Wyswietl_i_Pobierz("Podaj kod pocztowy firmy:");
+            firmaDoDodania.Telefon = Wyswietl_i_Pobierz("Podaj telefon firmy:");
             ListaFirm.Add(firmaDoDodania);
 
-            var firma = Console.ReadLine();
+            powrotDoMenu();
+
+            string Wyswietl_i_Pobierz(string tekst)
+            {
+                centrujText(tekst); // "Podaj nazwę firmy:");
+                return Console.ReadLine();
+            }
+        }
+
+        private static void powrotDoMenu()
+        {
             Menu();
             ReakcjaNaKlawisze();
-            Console.ReadLine();
-
         }
 
         public static void MenuKatalogi()
         {
             Console.Clear();
-            string ramka = "";
-            for (int i = 0; i < 80; i++)
-            {
-                ramka += "=";
 
-            }
+
+            Console.Clear();
+            string ramka = mojaRamka();
             Console.WriteLine("\n\n\n\n\n");
-            centrujText(ramka);
-            centrujText(" ");
-
+            RamkaGora(ramka);
             centrujText("WYBIERZ FIRMĘ DO STWORZEINA KATALOGÓW!");
-            centrujText(" ");
-            centrujText(ramka);
+            RamkaDol(ramka);
             int numer = 0;
             foreach (var item in ListaFirm)
             {
@@ -140,6 +143,7 @@ namespace Konsolka_1
             Console.ReadLine();
             Menu();
             ReakcjaNaKlawisze();
+
         }
     }
 
